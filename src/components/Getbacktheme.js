@@ -5,8 +5,8 @@ export default function Getbacktheme(weathertype) {
     else if (weathertype==='Rain'){
         return {backtheme: 'https://i.redd.it/emsyyg2m77ny.png',}
     }
-    else if (weathertype==='Sun'){
-        return {backtheme: 'https://www.xmple.com/wallpaper/blue-yellow-gradient-linear-1920x1080-c2-ffffe0-00bfff-a-45-f-14.svg',}
+    else if (weathertype==='Clear'){
+        return {backtheme: 'https://www.xmple.com/wallpaper/gradient-blue-white-linear-1920x1080-c2-87ceeb-f5fffa-a-90-f-14.svg',}
     }
     else {
         return {}

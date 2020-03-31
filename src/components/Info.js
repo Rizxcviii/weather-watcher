@@ -13,6 +13,7 @@ import moment from "moment";
 import Hidden from "@material-ui/core/Hidden";
 import Getactivity from "./Getactivity";
 import Getbacktheme from "./Getbacktheme";
+import Link from "@material-ui/core/Link";
 
 class Info extends React.Component {
     state={
@@ -26,6 +27,7 @@ class Info extends React.Component {
         backtheme: 'https://wallpaperaccess.com/full/134843.jpg',
         activity:'',
         activityimg:'',
+        activityshort: '',
     };
 
     componentDidMount() {
@@ -56,11 +58,13 @@ class Info extends React.Component {
                             currenttemp: String(Math.round((parseInt(weatherinfo.main.temp) - 273.12)*10)/10)+'°C',
                             humidity: 'Humidity: '+weatherinfo.main.humidity+'%',
                         });
-                        const suggestedactivity = Getactivity(weatherinfo.weather[0].main, Math.round((parseInt(weatherinfo.main.temp) - 273.12)*10)/10);
+                        const suggestedactivity = Getactivity(weatherinfo.weather[0].main, Math.round((parseInt(weatherinfo.main.temp) - 273.12)*10)/10)();
                         // const suggestedactivity = Getactivity('Sun', 19); //TESTING
+                        console.log(suggestedactivity)
                         this.setState({
                             activity: suggestedactivity.activity,
                             activityimg: suggestedactivity.image,
+                            activityshort: suggestedactivity.short,
                         });
                         // document.getElementsByClassName('App')[0].setAttribute('background-image',`url("${Getbacktheme(weatherinfo.weather[0].main).backtheme}")`);
                         // document.getElementById('root').style.backgroundImage = `url("${Getbacktheme(weatherinfo.weather[0].main).backtheme}")`;
@@ -69,8 +73,13 @@ class Info extends React.Component {
                 })
                 .catch(err=>{console.log(err)})
         }
-
     }
+
+    showMap(activity){
+        console.log(activity)
+        window.open(`https://www.google.com/maps/search/?api=1&query=${activity}`);
+    }
+
     render() {
         // console.log("ALL ,",this.state.articles)
         const styles = {
@@ -81,7 +90,7 @@ class Info extends React.Component {
                 // backgroundImage: `url(${Getbacktheme(this.state.type)})`
             },
             paper: {
-                height: "220px",
+                minHeight: "220px",
                 margin: "12px",
                 opacity: "0.7",
                 padding: "10px"
@@ -131,6 +140,7 @@ class Info extends React.Component {
                         <Card style={styles.sportimage} elevation={0}>
                             <CardActionArea>
                             <CardMedia
+                                onClick={()=>{this.showMap(this.state.activityshort)}}
                                 component="img"
                                 alt="Suggested activity image"
                                 image={this.state.activityimg}

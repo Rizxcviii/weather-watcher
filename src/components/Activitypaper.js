@@ -71,6 +71,7 @@ class Activitypaper extends React.Component{
     }
 
     render() {
+        console.log(this.state.activity)
         return(
             <Paper style={this.props.styles}>
                 <Grid container direction="row" justify="center" alignContent="center" style={{height:"100%"}}>
