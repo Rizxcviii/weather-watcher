@@ -14,14 +14,24 @@ class Newspaper extends React.Component {
     };
 
     componentDidMount() {
-        axios.get("http://newsapi.org/v2/top-headlines?country=gb&category=sport&apiKey=8bf6127cd4154169a48b8c53881fd189")
+        axios.get("https://newsapi.org/v2/top-headlines?country=gb&category=health&apiKey=8bf6127cd4154169a48b8c53881fd189")
             .then(response=>{
                 // console.log("AXIOS ", response);
                 this.setState({
                     articles: response.data.articles
                 })
             })
-            .catch(err=>{console.log(err)});
+            .catch(err=>{
+                console.log(err);
+                this.setState({
+                    articles: [{
+                        title: "No articles at the moment",
+                        source: {
+                            name: "-Unavailable"
+                        }
+                    }]
+                })
+            });
     }
 
     render() {

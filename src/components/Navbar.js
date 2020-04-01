@@ -5,16 +5,6 @@ import Typography from "@material-ui/core/Typography";
 import moment from "moment";
 
 const styles = {
-    // appbar: {
-    //     position: 'absolute',
-    //     backgroundColor: 'black',
-    //     alignItems: 'center',
-    //     opacity: "0.3",
-    //     boxShadow: 'none',
-    //     color:"white",
-    //     height: "80px",
-    //     padding: "4px"
-    // },
     appbar: {
         position: 'absolute',
         background: `rgb(0,0,0,0.2)`,

@@ -1,5 +1,5 @@
 export default function Getactivity(weathertype, currenttemp) {
-    console.log("FUFWIHFQOWHF ", weathertype, " ", currenttemp)
+    // console.log("FUFWIHFQOWHF ", weathertype, " ", currenttemp)
 
     /*
     weatherActivities DS split into 2 elements per array object;
@@ -17,24 +17,31 @@ export default function Getactivity(weathertype, currenttemp) {
             activities: [
                 {
                     minTemp: -10,
-                    maxTemp: 4,
-                    activity: "going for a jog",
+                    maxTemp: 5,
+                    activity: "Let's go for a jog!",
                     image:'https://res.cloudinary.com/twenty20/private_images/t_watermark-criss-cross-10/v1488012853000/photosp/af7ddf1c-c71c-430f-bf8e-3027d0fd4c8c/stock-photo-bed-watching-coffee-modern-latte-wide-laptop-cozy-neutral-af7ddf1c-c71c-430f-bf8e-3027d0fd4c8c.jpg',
                     short: 'park',
                 },
                 {
                     minTemp: 5,
-                    maxTemp: 18,
-                    activity:"doing something with your life",
+                    maxTemp: 9,
+                    activity:"Let's get to work and do some coding!",
                     image:'https://dynaimage.cdn.cnn.com/cnn/c_fill,g_auto,w_1200,h_675,ar_16:9/https%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F190923103050-underscored-coding-bundle-course.jpg',
-                    short: 'cemetery',
+                    short: 'library',
                 },
                 {
-                    minTemp: 18,
+                    minTemp: 9,
+                    maxTemp: 14,
+                    activity:"Cloudy, but we can squeeze in a golf match!",
+                    image:'https://upload.wikimedia.org/wikipedia/commons/6/6e/Golfer_swing.jpg',
+                    short: 'golf',
+                },
+                {
+                    minTemp: 14,
                     maxTemp: 999,
-                    activity:"playing indoor badminton",
+                    activity:"Let's play some indoor badminton!",
                     image:'https://www.tabletenniscoach.me.uk/wp-content/uploads/2018/10/badminton-racket.jpg',
-                    short: 'badminton',
+                    short: "leisure+center",
                 }
             ],
         },
@@ -43,24 +50,31 @@ export default function Getactivity(weathertype, currenttemp) {
             activities: [
                 {
                     minTemp: -10,
-                    maxTemp: 4,
-                    activity:"watching some Netflix",
+                    maxTemp: 5,
+                    activity:"Cozy up and watch some Netflix!",
                     image:'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/young-woman-jogging-through-the-fall-park-rear-shot-royalty-free-image-700592770-1538491624.jpg',
                     short: 'cinema',
                 },
                 {
                     minTemp: 5,
+                    maxTemp: 11,
+                    activity:"Let's make some gains today!",
+                    image:'https://lh3.googleusercontent.com/proxy/EUsLOw1-zLLsXe8EG_p50VOuUsjtSrQS61c_YrEtkARfnEO7RBOEFDD7iDtpEShWuHt0A6hnBmXGynHuzMELtSQxGcz2e3_4Q6IP5Zs-xxyOZVSUCfExC4999HMFUSaaHel0bfHP7-YGQnEE0h7IJ_2PdaQhK3jGvr69HzIrpC8',
+                    short: 'gym',
+                },
+                {
+                    minTemp: 11,
                     maxTemp: 18,
-                    activity:"cooking something new",
-                    image:'https://janeskitchenmiracles.com/wp-content/uploads/2017/02/Depositphotos_13461823_m-2015.jpg',
-                    short: 'restaurants',
+                    activity:"Try cooking something new!",
+                    image:'https://www.homechef.com/assets/cards/fb-aa993535126ad787ae16b17ad7fbd817ecf163f9181757de81a5818f5f686ff2.jpg',
+                    short: 'grocery',
                 },
                 {
                     minTemp: 18,
                     maxTemp: 999,
-                    activity:"exploring your city",
+                    activity:"Let's explore the city today!",
                     image:'https://www.traveldudes.org/sites/default/files/styles/image_node_main/public/exploringanewcity.jpg',
-                    short: 'museums',
+                    short: 'museum',
                 }
             ],
         },
@@ -70,27 +84,34 @@ export default function Getactivity(weathertype, currenttemp) {
                 {
                     minTemp: -999,
                     maxTemp: 5,
-                    activity:"playing football",
+                    activity:"Let's go play football!",
                     image:'https://dc-mp7static.mlsdigital.net/images/08_29_2018_AudiField_XD_02_DSC01388.jpg?LLN.49ZLIIoa_6WcEZijiLI9Cf.Q.rwf',
                     short: 'football+pitch'
                 },
                 {
                     minTemp: 5,
-                    maxTemp: 12,
-                    activity:"going for a swim",
+                    maxTemp: 11,
+                    activity:"Basketball sounds fun!",
+                    image:'https://cdn.shopify.com/s/files/1/0059/0056/6597/products/photo-id-2005248671813-men-playing-basketball-on-street.jpg?v=1563841133',
+                    short: 'basketball+court'
+                },
+                {
+                    minTemp: 11,
+                    maxTemp: 18,
+                    activity:"How about going for a swim?",
                     image:'https://www.thesun.co.uk/wp-content/uploads/2018/09/NINTCHDBPICT000435207229.jpg',
                     short: 'swimming+pool'
                 },
                 {
-                    minTemp: 13,
+                    minTemp: 18,
                     maxTemp: 999,
-                    activity:"getting some ice cream",
-                    image:'https://images2.minutemediacdn.com/image/upload/c_fill,g_auto,h_1248,w_2220/v1555926096/shape/mentalfloss/ice-cream-truck-history.png?itok=xclPtbUT',
-                    short: 'ice+cream',
+                    activity:"Ever tried surfing?",
+                    image:'https://www.visitcalifornia.com/sites/default/files/styles/welcome_image/public/vc_californiasbestwaves_windansea_st_rf_9313807_1280x640.jpg',
+                    short: 'beach',
                 }
             ]
         }
-    ]
+    ];
 
     return function(){
         for (const element of weatherActivities) {
@@ -109,52 +130,7 @@ export default function Getactivity(weathertype, currenttemp) {
                 }
             }
         }
-        return {activity: "I DON'T KNOW", image: ''};
+        return {activity: "Oops, I still have no idea about this weather. Maybe try again later!", image: 'activitynotfound.jpg'};
     }
 
-    // if (weathertype === 'Clouds') {
-    //     if (currenttemp >= -10 && currenttemp <= 4){
-    //         return {activity:"Cloud drawing", image:'https://res.cloudinary.com/twenty20/private_images/t_watermark-criss-cross-10/v1488012853000/photosp/af7ddf1c-c71c-430f-bf8e-3027d0fd4c8c/stock-photo-bed-watching-coffee-modern-latte-wide-laptop-cozy-neutral-af7ddf1c-c71c-430f-bf8e-3027d0fd4c8c.jpg'}
-    //     }
-    //     else if (currenttemp >= 5 && currenttemp <= 18 ){
-    //         return {activity:"Coding", image:'https://dynaimage.cdn.cnn.com/cnn/c_fill,g_auto,w_1200,h_675,ar_16:9/https%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F190923103050-underscored-coding-bundle-course.jpg'}
-    //     }
-    //     else if (currenttemp > 18){
-    //         return {activity:"Badminton", image:'https://www.tabletenniscoach.me.uk/wp-content/uploads/2018/10/badminton-racket.jpg'}
-    //     }
-    //     else{
-    //         return {activity:"null", image:'null'}
-    //     }
-    // }
-    // else if(weathertype === 'Sun'){
-    //     if (currenttemp >= -10 && currenttemp <= 4){
-    //         return {activity:"Jogging", image:'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/young-woman-jogging-through-the-fall-park-rear-shot-royalty-free-image-700592770-1538491624.jpg'}
-    //     }
-    //     else if (currenttemp >= 5 && currenttemp <= 18 ){
-    //         return {activity:"football", image:'https://upload.wikimedia.org/wikipedia/commons/b/b9/Football_iu_1996.jpg'}
-    //     }
-    //     else if (currenttemp > 18){
-    //         return {activity:"exploring your city", image:'https://www.traveldudes.org/sites/default/files/styles/image_node_main/public/exploringanewcity.jpg'}
-    //     }
-    //     else{
-
-    //     }
-    // }
-    // else if(weathertype === 'Rain'){
-    //     if (currenttemp <= 4){
-    //         return {activity:"Football", image:''}
-    //     }
-    //     else if (currenttemp >= 5 && currenttemp <= 12 ){
-    //         return {activity:"reading a book", image:'https://imgs.classicfm.com/images/106128?width=6000&crop=16_9&signature=VfJeSnw8tEetODPBnZzZVhE3lIU='}
-    //     }
-    //     else if (currenttemp >= 13){
-    //         return {activity:"Football", image:''}
-    //     }
-    //     else{
-    //         return {activity:"Procastinating", image:''}
-    //     }
-    // }
-    // else {
-    //     return {activity:"I DON'T KNOW", image:''}
-    // }
 }

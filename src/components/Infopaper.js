@@ -5,9 +5,6 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
-// import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
-// import PlayArrowIcon from '@material-ui/icons/PlayArrow';
-// import SkipNextIcon from '@material-ui/icons/SkipNext';
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -39,6 +36,20 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
+const weathertheme = (theme) => {
+    // console.log("THEME", theme)
+    if(theme==='Clouds'){
+        return "https://www.novinite.com/media/images/2019-07/photo_verybig_198527.jpg";
+    }
+    else if(theme==="Rain"){
+        return "https://media.istockphoto.com/photos/open-black-umbrella-in-wet-weather-autumn-rain-deep-sorrow-wet-of-picture-id1053791954?k=6&m=1053791954&s=612x612&w=0&h=OENo5DmqkLaAKhesTwlRIGsdgxcn4JQ5H2PNzo3HQYg=";
+    }
+    else if(theme==="Clear"){
+        return "https://scx2.b-cdn.net/gfx/news/hires/2019/palmtree.jpg";
+    }
+    else return "https://ak4.picdn.net/shutterstock/videos/3913154/thumb/8.jpg";
+};
+
 export default function Infocard({content, secondcontent}) {
     const classes = useStyles();
     const theme = useTheme();
@@ -55,18 +66,18 @@ export default function Infocard({content, secondcontent}) {
                     </Typography>
                 </CardContent>
                 <div className={classes.controls}>
-                    <IconButton aria-label="previous">
+                    <IconButton aria-label="">
                     </IconButton>
-                    <IconButton aria-label="play/pause">
+                    <IconButton aria-label="">
                     </IconButton>
-                    <IconButton aria-label="next">
+                    <IconButton aria-label="">
                     </IconButton>
                 </div>
             </div>
             <CardMedia
                 className={classes.cover}
-                image="https://www.novinite.com/media/images/2019-07/photo_verybig_198527.jpg"
-                title="Live from space album cover"
+                image={weathertheme(content)}
+                title="Weather theme image"
             />
         </Card>
     );

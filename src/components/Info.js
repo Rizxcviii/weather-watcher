@@ -13,32 +13,21 @@ import moment from "moment";
 import Hidden from "@material-ui/core/Hidden";
 import Getactivity from "./Getactivity";
 import Getbacktheme from "./Getbacktheme";
-import Link from "@material-ui/core/Link";
 
 class Info extends React.Component {
     state={
         userpos: this.props.userpos || "nope",
-        place: 'nope',
-        type: 'nope',
-        desc: 'nope',
-        currenttemp: 'nope',
-        humidity: 'nope',
+        place: 'The void',
+        type: 'idk',
+        desc: 'you tell me',
+        currenttemp: '0°C',
+        humidity: '0%',
         // articles: [],
         backtheme: 'https://wallpaperaccess.com/full/134843.jpg',
         activity:'',
-        activityimg:'',
+        activityimg:'https://ichef.bbci.co.uk/news/640/cpsprodpb/43DC/production/_87827371_photocompetition.jpg',
         activityshort: '',
     };
-
-    componentDidMount() {
-        // let articles = Webscrape();
-        // console.log("PARENT, ",articles);
-        // if(articles){this.setState({
-        //     articles:articles
-        // })
-        // }
-    }
-
 
     componentDidUpdate(prevProps, prevState, snapshot) {
         if (this.props.userpos !== prevProps.userpos){
@@ -49,7 +38,7 @@ class Info extends React.Component {
             axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${this.props.userpos.latitude}&lon=${this.props.userpos.longitude}&appid=850847c1d240424638584f0638faf124`)
                 .then(weather=>{
                     if(weather){
-                        console.log(weather, " FOUND");
+                        // console.log(weather, " FOUND");
                         const weatherinfo = weather.data;
                         this.setState({
                             place: weatherinfo.name,
@@ -60,14 +49,12 @@ class Info extends React.Component {
                         });
                         const suggestedactivity = Getactivity(weatherinfo.weather[0].main, Math.round((parseInt(weatherinfo.main.temp) - 273.12)*10)/10)();
                         // const suggestedactivity = Getactivity('Sun', 19); //TESTING
-                        console.log(suggestedactivity)
+                        // console.log(suggestedactivity)
                         this.setState({
                             activity: suggestedactivity.activity,
                             activityimg: suggestedactivity.image,
                             activityshort: suggestedactivity.short,
                         });
-                        // document.getElementsByClassName('App')[0].setAttribute('background-image',`url("${Getbacktheme(weatherinfo.weather[0].main).backtheme}")`);
-                        // document.getElementById('root').style.backgroundImage = `url("${Getbacktheme(weatherinfo.weather[0].main).backtheme}")`;
                         document.getElementsByClassName('MuiGrid-root MuiGrid-container MuiGrid-justify-xs-center')[0].style.backgroundImage = `url("${Getbacktheme(weatherinfo.weather[0].main).backtheme}")`;
                     }
                 })
@@ -76,7 +63,7 @@ class Info extends React.Component {
     }
 
     showMap(activity){
-        console.log(activity)
+        // console.log(activity)
         window.open(`https://www.google.com/maps/search/?api=1&query=${activity}`);
     }
 
@@ -156,20 +143,4 @@ class Info extends React.Component {
 }
 
 export default Info
-
-//
-// getCurrentWeather(){
-//     const [currentWeather, setcurrentWeather] = useState({location:{}, current: {}});
-//     navigator.geolocation.getCurrentPosition(position => {
-//         console.log(position.coords);
-//         axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=850847c1d240424638584f0638faf124`)
-//             .then(response=>{
-//                 setcurrentWeather(response.data)
-//             }
-//             .catch(err=>{console.log(err)})
-//     });
-// }currentWeather.name
-// location {currentWeather.name}
-// setcurrentWeather(response.data)
-// var url = 'http://api.openweathermap.org/data/2.5/weather?q='+city+','+ country+'&units=metric&APPID=2664264145181f422d7b97f1cb486ee8';
 
